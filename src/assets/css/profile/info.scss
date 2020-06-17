@@ -1,0 +1,724 @@
+@import "../common";
+
+.profile-edit-wrapper {
+  background-color: #fff;
+  padding-left: 50px;
+  padding-right: 50px;
+  box-sizing: border-box;
+
+  .profile-edit-content {
+    width: 700px;
+    max-width: 100%;
+    margin: 0 auto 80px;
+    border-bottom: 1px solid #eaeaea;
+    padding-top: 50px;
+    box-sizing: border-box;
+  }
+  .profile-edit-datum {
+    width: 100%;
+    padding: 5px 0;
+    label {
+      color: #070707;
+      font-size: 20px;
+      font-family: "VegurR";
+      line-height: 1.8;
+    }
+    .profile-edit-control,
+    .profile-edit-textarea {
+      width: 100%;
+      font-size: 20px;
+      height: 40px;
+      border: 1px solid #b2b2b2;
+      padding: 0 10px;
+      box-sizing: border-box;
+      &:focus {
+        border-color: #a6a6a6;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+      }
+      &.has-error {
+        border-color: #ff0000;
+      }
+    }
+    .profile-edit-textarea {
+      height: 100px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    .profile-edit-labels {
+      display: flex;
+      flex-wrap: wrap;
+      span {
+        font-size: 20px;
+        padding: 8px 15px;
+        border: 1px solid #b2b2b2;
+        margin-right: 20px;
+        margin-bottom: 16px;
+        font-family: "VegurR";
+        cursor: pointer;
+        &:hover {
+           color: #f0143c;
+         }
+        &.checked {
+           color: #f0143c;
+           border-color: #f0143c;
+         }
+      }
+    }
+
+    .profile-custom-labels {
+      span {
+        border-color: #f0143c;
+        @include pr;
+        &:after {
+           content: "✕";
+           width: 12px;
+           height: 12px;
+           background-color: #f0143c;
+          @include pa;
+           top: 0;
+           right: 0;
+           color: #fff;
+           font-size: 12px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+         }
+      }
+    }
+
+    .profile-custom-labels-add-wrap {
+      display: flex;
+      margin-top: -10px;
+    }
+
+    .profile-custom-labels-control {
+      width: 215px;
+      margin-right: 10px;
+    }
+
+    .add-label {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      cursor: pointer;
+      &:hover {
+        span {
+          background-color: #868686;
+        }
+      }
+      span {
+        font-family: "VegurEL";
+        background-color: #b2b2b2;
+        font-size: 32px;
+        color: #fff;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        transition: background-color 0.2s;
+      }
+    }
+
+    .profile-edit-file {
+      width: 124px;
+      height: 38px;
+      @include pr;
+      text-align: center;
+      margin-bottom: 10px;
+
+      span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        line-height: 38px;
+        background-color: #b2b2b2;
+        color: #fff;
+        font-size: 20px;
+        font-family: "VegurEL";
+        border-radius: 5px;
+        transition: background-color 0.2s;
+      }
+      input {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        @include pa;
+        left: 0;
+        top: 0;
+        opacity: 0;
+      }
+
+      &:hover {
+        span {
+          background-color: #868686;
+        }
+      }
+    }
+
+    .profile-edit-works {
+      font-size: 16px;
+      font-family: "VegurR";
+      line-height: 1.3;
+      color: #070707;
+      padding: 0 0.5em;
+      margin-bottom: 5px;
+    }
+  }
+
+  .profile-edit-datums {
+    display: flex;
+    justify-content: space-between;
+    > .profile-edit-datum {
+      width: 19.5%;
+      label {
+        /*line-height: 1.1 !important;*/
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .info-tips {
+    height: px2rem(30px);
+    line-height: px2rem(30px);
+    margin-bottom: px2rem(6px);
+    margin-top: px2rem(40px);
+    font-family: "VegurR";
+    font-size: px2rem(24px);
+    color: #f0143c;
+  }
+  .info-sub {
+    width: 360px;
+    height: 70px;
+    /*line-height: 70px;*/
+    margin: 0 auto 80px;
+    background-color: #f0143c;
+    color: #fff;
+    font-size: 28px;
+    font-family: "VegurB";
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+     background-color: #f0282b;
+   }
+    &:active {
+     transform: scale(0.99);
+   }
+    &.disabled,
+    &:disabled {
+       background-color: #ccc;
+       cursor: not-allowed;
+      &:active {
+       transform: scale(1);
+     }
+    }
+  }
+
+  .profile-edit-control-wrap {
+    @include pr;
+
+    .languages-list {
+      @include pa;
+      left: 0;
+      right: 0;
+      top: 100%;
+      background-color: #fff;
+      z-index: 1;
+      padding: 5px 0;
+      box-sizing: border-box;
+      max-height: 300px;
+      overflow: auto;
+      border: 1px solid #b2b2b2;
+      li {
+        line-height: 1.5;
+        font-size: 16px;
+        padding: 0 10px;
+        cursor: pointer;
+        &:hover {
+          background-color: #ebebeb;
+        }
+        &.disabled {
+          cursor: not-allowed;
+          opacity: 0.5;
+          &:hover {
+            background: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.profile-edit-phone {
+  display: flex;
+  .profile-edit-phone-code {
+    width: 160px;
+    font-size: 16px;
+    border: 1px solid #b2b2b2;
+    border-right: none;
+    padding: 0 10px;
+    box-sizing: border-box;
+    text-align: right;
+    &:before {
+      content: "+";
+      color: #070707;
+    }
+  }
+}
+
+.profile-type-supported {
+  margin-top: -2px;
+  margin-bottom: 7px;
+  color: #ff0000;
+  font-size: 16px;
+  /*margin-bottom: 10px;*/
+  display: block;
+  font-weight: normal;
+  font-family: "VegurR";
+}
+.profile-files {
+  display: flex;
+  flex-wrap: wrap;
+  .profile-file {
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ebebeb;
+    overflow: hidden;
+    @include pr;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    .profile-file-delete {
+      @include pa;
+      left: 0;
+      right: 0;
+      bottom: -40px;
+      opacity: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      text-align: center;
+      padding: 5px 0;
+      transition: bottom 0.25s, opacity 0.1s;
+      .fa-trash-o {
+        font-size: 24px;
+        color: #eceaea;
+        cursor: pointer;
+        &:active {
+          color: #fff;
+        }
+      }
+    }
+
+    &:hover {
+      .profile-file-delete {
+        bottom: 0;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1366px) and (max-width: 1599px) {
+  .profile-edit-wrapper {
+    .profile-edit-content {
+      padding-top: 40px;
+      margin-bottom: 60px;
+      .profile-edit-datum {
+        label {
+          font-size: 18px;
+          line-height: 1.6;
+        }
+        .profile-edit-control,
+        .profile-edit-textarea,
+        .profile-info {
+          font-size: 18px;
+        }
+        .profile-edit-control {
+          height: 36px;
+        }
+        .profile-edit-labels {
+          span {
+            font-size: 18px;
+            padding: 6px 12px;
+          }
+        }
+        .add-label {
+          span {
+            font-size: 28px;
+            height: 36px;
+            line-height: 36px;
+            width: 36px;
+          }
+        }
+        .profile-edit-file {
+          height: 36px;
+          span {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    .info-sub {
+      font-size: 24px;
+      height: 60px;
+      width: 300px;
+      margin-bottom: 60px;
+    }
+  }
+}
+
+@media screen and (min-width: 1080px) and (max-width: 1365px) {
+  .signup-form-control {
+    font-size: 18px;
+  }
+  .profile-edit-wrapper {
+    .profile-edit-content {
+      padding-top: 30px;
+      margin-bottom: 50px;
+      .profile-edit-datum {
+        label {
+          font-size: 18px;
+          line-height: 1.6;
+        }
+        .profile-edit-control,
+        .profile-edit-textarea,
+        .profile-info {
+          font-size: 18px;
+        }
+        .profile-edit-control {
+          height: 36px;
+        }
+        .profile-edit-labels {
+          span {
+            font-size: 18px;
+            padding: 6px 12px;
+          }
+        }
+        .add-label {
+          span {
+            font-size: 28px;
+            height: 36px;
+            line-height: 36px;
+            width: 36px;
+          }
+        }
+        .profile-edit-file {
+          height: 36px;
+          span {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    .info-sub {
+      font-size: 24px;
+      height: 60px;
+      width: 300px;
+      margin-bottom: 60px;
+    }
+
+    .profile-edit-datums {
+      label {
+        white-space: nowrap;
+      }
+      /*justify-content: flex-start;
+      flex-wrap: wrap;
+      .profile-edit-datum {
+        width: 32%;
+        margin-right: 2%;
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+      }*/
+    }
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1079px) {
+  .profile-edit-wrapper {
+    .profile-edit-content {
+      padding-top: 30px;
+      margin-bottom: 50px;
+      .profile-edit-datum {
+        label {
+          font-size: 18px;
+          line-height: 1.6;
+        }
+        .profile-edit-control,
+        .profile-edit-textarea,
+        .profile-info {
+          font-size: 18px;
+        }
+        .profile-edit-control {
+          height: 36px;
+        }
+        .profile-edit-labels {
+          span {
+            font-size: 18px;
+            padding: 6px 12px;
+          }
+        }
+        .add-label {
+          span {
+            font-size: 28px;
+            height: 36px;
+            line-height: 36px;
+            width: 36px;
+          }
+        }
+        .profile-edit-file {
+          height: 36px;
+          span {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    .info-sub {
+      font-size: 24px;
+      height: 60px;
+      width: 300px;
+      margin-bottom: 60px;
+    }
+
+    .profile-edit-datums {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      .profile-edit-datum {
+        width: 32%;
+        margin-right: 2%;
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 751px) and (max-width: 899px) {
+  .profile-edit-wrapper {
+    .profile-edit-content {
+      padding-top: 30px;
+      margin-bottom: 50px;
+      .profile-edit-datum {
+        label {
+          font-size: 18px;
+          line-height: 1.6;
+        }
+        .profile-edit-control,
+        .profile-edit-textarea,
+        .profile-info {
+          font-size: 18px;
+        }
+        .profile-edit-control {
+          height: 36px;
+        }
+        .profile-edit-labels {
+          span {
+            font-size: 18px;
+            padding: 6px 12px;
+            margin-bottom: 16px;
+            margin-right: 16px;
+          }
+        }
+        .add-label {
+          span {
+            font-size: 28px;
+            height: 36px;
+            line-height: 36px;
+            width: 36px;
+          }
+        }
+        .profile-edit-file {
+          height: 36px;
+          span {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    .info-sub {
+      font-size: 20px;
+      height: 50px;
+      width: 270px;
+      margin-bottom: 60px;
+    }
+
+    .profile-edit-datums {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      .profile-edit-datum {
+        width: 32%;
+        margin-right: 2%;
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 750px) {
+  .profile-edit-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+    .profile-edit-content {
+      padding-top: px2rem(20px);
+      margin-bottom: px2rem(40px);
+      .profile-edit-datum {
+        padding: 3px 0;
+        label {
+          font-size: 18px;
+          line-height: 1.6;
+        }
+        .profile-edit-control,
+        .profile-edit-textarea,
+        .profile-info {
+          font-size: 16px;
+        }
+        .profile-edit-control {
+          height: 36px;
+        }
+        .profile-edit-labels {
+          span {
+            font-size: 16px;
+            padding: 6px 12px;
+            margin-bottom: 16px;
+            margin-right: 16px;
+          }
+        }
+        .add-label {
+          span {
+            font-size: 28px;
+            height: 36px;
+            line-height: 36px;
+            width: 36px;
+          }
+        }
+        .profile-edit-file {
+          height: 36px;
+          span {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    .info-sub {
+      font-size: 20px;
+      height: 50px;
+      width: 270px;
+      margin-bottom: 40px;
+    }
+
+    .profile-edit-datums {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      .profile-edit-datum {
+        width: 32%;
+        margin-right: 2%;
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .profile-files {
+    .profile-file {
+      .profile-file-delete {
+        opacity: 1;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .profile-edit-wrapper {
+    padding-left: px2rem(40px);
+    padding-right: px2rem(40px);
+    .profile-edit-content {
+      padding-top: px2rem(100px);
+      margin-bottom: px2rem(50px);
+      .profile-edit-datum {
+        padding: 3px 0;
+        label {
+          font-size: 18px;
+          line-height: 1.4;
+        }
+        .profile-edit-control,
+        .profile-edit-textarea,
+        .profile-info {
+          font-size: 16px;
+        }
+        .profile-edit-control {
+          height: 36px;
+        }
+        .profile-edit-labels {
+          span {
+            font-size: 16px;
+            padding: 6px 12px;
+            margin-bottom: 10px;
+            margin-right: 10px;
+          }
+        }
+        .profile-custom-labels-add-wrap {
+          margin-top: -2px;
+        }
+        .add-label {
+          span {
+            font-size: 28px;
+            height: 36px;
+            line-height: 36px;
+            width: 36px;
+          }
+        }
+        .profile-edit-file {
+          height: 36px;
+          span {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    .info-sub {
+      font-size: 20px;
+      height: 50px;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .profile-edit-datums {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      .profile-edit-datum {
+        width: 47%;
+        margin-right: 6%;
+        &:nth-child(even) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .profile-files {
+    .profile-file {
+      .profile-file-delete {
+        opacity: 1;
+        bottom: 0;
+      }
+    }
+  }
+}

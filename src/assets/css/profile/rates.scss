@@ -1,0 +1,611 @@
+@import "../common";
+
+.profile-edit-wrapper {
+  background-color: #fff;
+  padding-left: 50px;
+  padding-right: 50px;
+  box-sizing: border-box;
+
+  .profile-edit-content {
+    width: 700px;
+    max-width: 100%;
+    margin: 0 auto 80px;
+    padding-top: 60px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  .profile-social-title {
+    margin-bottom: 30px;
+    h2 {
+      color: #070707;
+      font-size: 46px;
+      font-family: "VegurB";
+      margin-bottom: 20px;
+    }
+    p{
+      color: #070707;
+      font-family: "VegurEL";
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+  }
+
+  .profile-rates-main {
+    border-top: 1px solid #eaeaea;
+
+    .profile-rates-datum {
+      display: flex;
+      flex-direction: column;
+      margin: 30px auto;
+      label {
+        color: #070707;
+        font-size: 20px;
+        font-family: "VegurB";
+        line-height: 2;
+      }
+      .profile-rates-select {
+        height: 40px;
+        border-color: #b2b2b2;
+        font-size: 20px;
+      }
+    }
+
+    .profile-rates-list {
+      .profile-rates-details {
+        margin-bottom: 80px;
+
+        .profile-rates-name {
+          display: flex;
+          align-items: center;
+          margin-bottom: 15px;
+          strong {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background-color: #070707;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 10px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            i {
+              font-size: 24px;
+              margin: 0 auto;
+            }
+          }
+          span {
+            color: #070707;
+            font-size: 20px;
+            font-family: "VegurEL";
+            font-weight: 600;
+          }
+        }
+
+        .profile-rates-post {
+          padding-left: 50px;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 30px;
+          .profile-rates-post-info {
+            display: flex;
+            flex-direction: column;
+            font-size: 20px;
+            line-height: 1.2;
+            strong {
+              color: #070707;
+              font-family: VegurB;
+            }
+            span {
+              color: #757575;
+              font-family: VegurEL;
+            }
+          }
+
+          .profile-rates-post-control {
+            width: 350px;
+            .profile-rates-post-input {
+              width: 100%;
+              height: 40px;
+              border: 1px solid #b2b2b2;
+              padding: 0 10px;
+              box-sizing: border-box;
+              font-size: 20px;
+              &:focus {
+                border-color: #a6a6a6;
+                box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .info-tips {
+      height: px2rem(30px);
+      line-height: px2rem(30px);
+      margin-bottom: px2rem(6px);
+      margin-top: px2rem(40px);
+      font-family: "VegurR";
+      font-size: px2rem(24px);
+      color: #f0143c;
+    }
+    .info-sub {
+      width: 360px;
+      height: 70px;
+      margin: 0 auto 80px;
+      background-color: #f0143c;
+      color: #fff;
+      font-size: 28px;
+      font-family: "VegurB";
+      border-radius: 5px;
+      cursor: pointer;
+      &:hover {
+        background-color: #f0282b;
+      }
+      &:active {
+        transform: scale(0.99);
+      }
+      &.disabled,
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+        &:active {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1366px) and (max-width: 1599px) {
+  .profile-edit-wrapper {
+    .profile-edit-content {
+      padding-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .profile-social-title {
+      margin-bottom: 25px;
+      h2 {
+        font-size: 42px;
+        margin-bottom: 15px;
+      }
+      p{
+        font-size: 23px;
+      }
+    }
+
+    .profile-rates-main {
+      .profile-rates-datum {
+        margin-top: 25px;
+        margin-bottom: 25px;
+        label {
+          font-size: 18px;
+          line-height: 1.8;
+        }
+        .profile-rates-select {
+          height: 36px;
+          font-size: 18px;
+        }
+      }
+
+      .profile-rates-list {
+        .profile-rates-details {
+          margin-bottom: 70px;
+          .profile-rates-name {
+            margin-bottom: 12px;
+          }
+          .profile-rates-post {
+            margin-bottom: 24px;
+            .profile-rates-post-info {
+
+            }
+            .profile-rates-post-control {
+              width: 320px;
+              .profile-rates-post-input {
+                height: 36px;
+                font-size: 18px;
+              }
+            }
+          }
+        }
+      }
+
+      .info-sub {
+        font-size: 24px;
+        height: 60px;
+        width: 300px;
+        margin-bottom: 60px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1080px) and (max-width: 1365px) {
+  .profile-edit-wrapper {
+    .profile-edit-content {
+      padding-top: 30px;
+      margin-bottom: 50px;
+    }
+
+    .profile-social-title {
+      margin-bottom: 20px;
+      h2 {
+        font-size: 40px;
+        margin-bottom: 12px;
+      }
+      p{
+        font-size: 22px;
+      }
+    }
+
+    .profile-rates-main {
+      .profile-rates-datum {
+        margin-top: 20px;
+        margin-bottom: 25px;
+        label {
+          font-size: 18px;
+          line-height: 1.8;
+        }
+        .profile-rates-select {
+          height: 36px;
+          font-size: 18px;
+        }
+      }
+
+      .profile-rates-list {
+        .profile-rates-details {
+          margin-bottom: 50px;
+          .profile-rates-name {
+            margin-bottom: 12px;
+          }
+          .profile-rates-post {
+            margin-bottom: 20px;
+            .profile-rates-post-info {
+
+            }
+            .profile-rates-post-control {
+              width: 320px;
+              .profile-rates-post-input {
+                height: 36px;
+                font-size: 18px;
+              }
+            }
+          }
+        }
+      }
+
+      .info-sub {
+        font-size: 24px;
+        height: 60px;
+        width: 300px;
+        margin-bottom: 60px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1079px) {
+  .profile-edit-wrapper {
+    .profile-edit-content {
+      padding-top: 30px;
+      margin-bottom: 50px;
+    }
+
+    .profile-social-title {
+      margin-bottom: 20px;
+      h2 {
+        font-size: 40px;
+        margin-bottom: 12px;
+      }
+      p{
+        font-size: 22px;
+      }
+    }
+
+    .profile-rates-main {
+      .profile-rates-datum {
+        margin-top: 20px;
+        margin-bottom: 25px;
+        label {
+          font-size: 18px;
+          line-height: 1.8;
+        }
+        .profile-rates-select {
+          height: 36px;
+          font-size: 18px;
+        }
+      }
+
+      .profile-rates-list {
+        .profile-rates-details {
+          margin-bottom: 30px;
+          .profile-rates-name {
+            margin-bottom: 6px;
+            strong {
+              width: 38px;
+              height: 38px;
+              line-height: 38px;
+              margin-right: 6px;
+              i {
+                font-size: 20px;
+              }
+              img {
+                width: 20px;
+              }
+            }
+          }
+          .profile-rates-post {
+            margin-bottom: 14px;
+            padding-left: 44px;
+            .profile-rates-post-info {
+              font-size: 18px;
+            }
+            .profile-rates-post-control {
+              width: 260px;
+              .profile-rates-post-input {
+                height: 36px;
+                font-size: 18px;
+              }
+            }
+          }
+        }
+      }
+
+      .info-sub {
+        font-size: 24px;
+        height: 60px;
+        width: 300px;
+        margin-bottom: 60px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 751px) and (max-width: 899px) {
+  .profile-edit-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+    .profile-edit-content {
+      padding-top: 30px;
+      margin-bottom: 40px;
+    }
+
+    .profile-social-title {
+      margin-bottom: 16px;
+      h2 {
+        font-size: 38px;
+        margin-bottom: 12px;
+      }
+      p{
+        font-size: 20px;
+        line-height: 1.35;
+      }
+    }
+
+    .profile-rates-main {
+      .profile-rates-datum {
+        margin-top: 14px;
+        margin-bottom: 20px;
+        label {
+          font-size: 18px;
+          line-height: 1.8;
+        }
+        .profile-rates-select {
+          height: 36px;
+          font-size: 18px;
+        }
+      }
+
+      .profile-rates-list {
+        .profile-rates-details {
+          margin-bottom: 30px;
+          .profile-rates-name {
+            margin-bottom: 6px;
+            strong {
+              width: 38px;
+              height: 38px;
+              line-height: 38px;
+              margin-right: 6px;
+              i {
+                font-size: 20px;
+              }
+              img {
+                width: 20px;
+              }
+            }
+          }
+          .profile-rates-post {
+            margin-bottom: 14px;
+            padding-left: 44px;
+            .profile-rates-post-info {
+              font-size: 18px;
+            }
+            .profile-rates-post-control {
+              width: 260px;
+              .profile-rates-post-input {
+                height: 36px;
+                font-size: 18px;
+              }
+            }
+          }
+        }
+      }
+
+      .info-sub {
+        font-size: 20px;
+        height: 50px;
+        width: 270px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 750px) {
+  .profile-edit-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+    .profile-edit-content {
+      padding-top: 30px;
+      margin-bottom: 40px;
+    }
+
+    .profile-social-title {
+      margin-bottom: 16px;
+      h2 {
+        font-size: 38px;
+        margin-bottom: 12px;
+      }
+      p{
+        font-size: 20px;
+        line-height: 1.35;
+      }
+    }
+
+    .profile-rates-main {
+      .profile-rates-datum {
+        margin-top: 14px;
+        margin-bottom: 20px;
+        label {
+          font-size: 18px;
+          line-height: 1.8;
+        }
+        .profile-rates-select {
+          height: 36px;
+          font-size: 16px;
+        }
+      }
+
+      .profile-rates-list {
+        .profile-rates-details {
+          margin-bottom: 30px;
+          .profile-rates-name {
+            margin-bottom: 6px;
+            strong {
+              width: 38px;
+              height: 38px;
+              line-height: 38px;
+              margin-right: 6px;
+              i {
+                font-size: 20px;
+              }
+              img {
+                width: 20px;
+              }
+            }
+          }
+          .profile-rates-post {
+            margin-bottom: 14px;
+            padding-left: 44px;
+            flex-direction: column;
+            .profile-rates-post-info {
+              font-size: 18px;
+              margin-bottom: 3px;
+            }
+            .profile-rates-post-control {
+              width: 100%;
+              .profile-rates-post-input {
+                height: 36px;
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+
+      .info-sub {
+        font-size: 20px;
+        height: 50px;
+        width: 270px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .profile-edit-wrapper {
+    padding-left: px2rem(40px);
+    padding-right: px2rem(40px);
+    .profile-edit-content {
+      padding-top: px2rem(100px);
+      margin-bottom: px2rem(50px);
+    }
+
+    .profile-social-title {
+      margin-bottom: px2rem(20px);
+      h2 {
+        font-size: px2rem(52px);
+        margin-bottom: px2rem(20px);
+      }
+      p{
+        font-size: px2rem(32px);
+        line-height: 1.35;
+      }
+    }
+
+    .profile-rates-main {
+      .profile-rates-datum {
+        margin-top: px2rem(20px);
+        margin-bottom: px2rem(28px);
+        label {
+          font-size: 18px;
+          line-height: 1.8;
+        }
+        .profile-rates-select {
+          height: 36px;
+          font-size: 16px;
+        }
+      }
+
+      .profile-rates-list {
+        .profile-rates-details {
+          margin-bottom: 30px;
+          .profile-rates-name {
+            margin-bottom: 6px;
+            strong {
+              width: px2rem(60px);
+              height: px2rem(60px);
+              line-height: px2rem(60px);
+              margin-right: px2rem(10px);
+              i {
+                font-size: px2rem(30px);
+              }
+              img {
+                width: px2rem(30px);
+              }
+            }
+          }
+          .profile-rates-post {
+            margin-bottom: 14px;
+            padding-left: px2rem(70px);
+            flex-direction: column;
+            .profile-rates-post-info {
+              font-size: 18px;
+              margin-bottom: 3px;
+            }
+            .profile-rates-post-control {
+              width: 100%;
+              .profile-rates-post-input {
+                height: 36px;
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+
+      .info-sub {
+        font-size: 20px;
+        height: 50px;
+        width: 100%;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
